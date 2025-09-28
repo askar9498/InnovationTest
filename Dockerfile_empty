@@ -1,0 +1,29 @@
+﻿FROM node:20-alpine AS builder  
+echo "Starting Node.js build stage..."
+
+WORKDIR /app  
+echo "Setting working directory to /app"
+
+COPY package*.json ./  
+echo "Copying package files..."
+
+RUN npm i --verbose  
+echo "Installing dependencies - FINISHED"
+
+COPY . .  
+echo "Copying source code..."
+
+RUN npm run build  
+echo "Building application - FINISHED"
+
+FROM nginx:alpine  
+echo "Starting Nginx stage..."
+
+COPY --from=builder /app/dist /usr/share/nginx/html  
+echo "Copying built files to Nginx - FINISHED"
+
+EXPOSE 80  
+echo "Exposing port 80"
+
+CMD ["nginx", "-g", "daemon off;"]
+echo "Starting Nginx server - FINISHED"

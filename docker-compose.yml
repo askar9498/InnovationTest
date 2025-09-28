@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/app # Optional: Mount the project directory for development purposes
+    # command: "yarn dev" # Optional: Command to run during development 

@@ -1,0 +1,152 @@
+/* Material Design Floating Action Button */
+.material-fab {
+  font-family: 'Lalezar', sans-serif;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #BBDEFB 0%, #90CAF9 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(187, 222, 251, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1e293b;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transform: translateY(0);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  min-width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(187, 222, 251, 0.4);
+  background: linear-gradient(135deg, #90CAF9 0%, #BBDEFB 100%);
+}
+
+.material-fab:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(187, 222, 251, 0.3);
+}
+
+/* Button content layout */
+.material-fab .btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.material-fab .icon-wrapper {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.material-fab:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+.material-fab .btn-text {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Ripple effect */
+.material-fab .ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 1;
+}
+
+.material-fab:active .ripple {
+  transform: scale(2);
+  opacity: 0;
+}
+
+/* Gradient overlay */
+.material-fab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.material-fab:hover::after {
+  opacity: 1;
+}
+
+/* Button variants */
+.material-fab.primary {
+  background: linear-gradient(135deg, #BBDEFB 0%, #90CAF9 100%);
+  box-shadow: 0 4px 12px rgba(187, 222, 251, 0.3);
+}
+
+.material-fab.success {
+  background: linear-gradient(135deg, #A5D6A7 0%, #81C784 100%);
+  box-shadow: 0 4px 12px rgba(165, 214, 167, 0.3);
+}
+
+.material-fab.warning {
+  background: linear-gradient(135deg, #FFE082 0%, #FFD54F 100%);
+  box-shadow: 0 4px 12px rgba(255, 224, 130, 0.3);
+}
+
+.material-fab.danger {
+  background: linear-gradient(135deg, #EF9A9A 0%, #E57373 100%);
+  box-shadow: 0 4px 12px rgba(239, 154, 154, 0.3);
+}
+
+/* Position variants */
+.material-fab.top-left {
+  top: 2rem;
+  left: 2rem;
+  bottom: auto;
+}
+
+.material-fab.top-right {
+  top: 2rem;
+  right: 2rem;
+  left: auto;
+  bottom: auto;
+}
+
+.material-fab.bottom-right {
+  bottom: 5rem;
+  right: 2rem;
+  left: auto;
+}
+
+/* Size variants */
+.material-fab.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-width: 120px;
+}
+
+.material-fab.large {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  min-width: 200px;
+} 

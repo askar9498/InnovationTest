@@ -1,0 +1,120 @@
+/* Custom Menu Styles */
+.aside {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.aside-menu {
+  padding: 1.5rem 0;
+}
+
+.menu-item {
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(-5px);
+}
+
+.menu-item.active {
+  background: linear-gradient(90deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0.2) 100%);
+  border-right: 3px solid #2196f3;
+}
+
+.menu-link {
+  padding: 0.75rem 1.5rem;
+  color: #e0e0e0 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+  color: #ffffff !important;
+}
+
+.menu-icon {
+  color: #2196f3;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover .menu-icon {
+  transform: scale(1.1);
+  color: #64b5f6;
+}
+
+.menu-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.menu-arrow {
+  color: #757575;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover .menu-arrow {
+  color: #ffffff;
+}
+
+/* Submenu Styles */
+.menu-sub {
+  margin-right: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-sub .menu-item {
+  margin: 0.3rem 0;
+}
+
+.menu-sub .menu-link {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Active State */
+.menu-item.active > .menu-link {
+  color: #2196f3 !important;
+  background: linear-gradient(90deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0.2) 100%);
+}
+
+.menu-item.active > .menu-link .menu-icon {
+  color: #2196f3;
+}
+
+/* RTL Specific Adjustments */
+[dir="rtl"] .menu-item:hover {
+  transform: translateX(5px);
+}
+
+[dir="rtl"] .menu-item.active {
+  border-right: none;
+  border-left: 3px solid #2196f3;
+}
+
+[dir="rtl"] .menu-sub {
+  margin-right: 0;
+  margin-left: 1rem;
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar Styling */
+.aside-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.aside-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.aside-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.aside-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+} 
